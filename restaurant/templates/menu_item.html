@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <article>
+        <h1>Menu item</h1>
+        <span>
+            <a href="{% url 'home' %}">Home</a> /
+            <a href="{% url 'menu' %}">Menu</a>/
+            <!-- Step: Replace code here -->
+            {{menu_item.name}}
+        </span>
+        <!--Begin row-->
+        <div class="row">
+            <!--Begin col-->
+            <div class="column">
+                <h2>
+                    <!-- Step: Replace code here -->
+                {{menu_item.name}}
+                </h2>
+                <p>
+                    <!-- Step: Replace code here -->
+                {{menu_item.menu_item_description}}
+                </p>
+                <p>
+                    <!-- Step: Replace code here -->
+                ${{menu_item.price}}.00
+                </p>
+            </div>
+            <!--End col-->
+            <!--Begin col-->
+            <div class="column">
+                <img src="/restaurant/static/img/menu_items/{{menu_item.name}}.jpg" alt="{{ menu_item.name}}" />
+            </div>
+            <!--End col-->
+        </div>
+        <!--End row-->
+    </article>
+</section>
+{% endblock %}
+
+<!-- Name: Bruschetta
+Price: 11
+An Italian antipasto called bruschetta is made of grilled bread that has been smeared with garlic and
+seasoned with salt and olive oil. Toppings of tolsmato, veggies, beans, cured pork, or cheese are examples of variations.
+In Italy, a brustolina grill is frequently used to create bruschetta.
+
+Name: Greek salad
+Price: 12
+Description: Our famous Greek salad of crispy lettuce, peppers, olives, and our
+Chicago-style feta cheese. Garnished with crispy onion and salty capers.
+
+
+Name: Grilled fish
+Price: 9
+Description: The fish is swiftly grilled over medium- or high-heat coals or over medium- or high-heat gas grill burners.
+Thinner fillets and steaks are grilled over direct fire.
+
+
+
+
+Name: Lemon dessert
+Price: 7
+Description: This cake is adored not only for its flavor but also for its texture and simplicity. A base of creamed
+butter and sugar, eggs, lemon, milk, and flour are among the most basic ingredients. We omitted the brown sugar and
+substituted extra granulated sugar instead. -->
