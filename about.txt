@@ -1,0 +1,54 @@
+Created based on a lab from Meta course Meta Back-End Developer Professional Certificate from Coursera.
+
+Course Django Web Framework.
+Module 5.
+
+Designing and building a simple Django app.
+
+Objectives
+1. Rendering templates with DTL
+2. Creating Menu items from Django admin
+3. Displaying Menu items by looping in DTL
+4. Addint Booking option with db.sqlite3
+
+
+1. Install all dependencies.
+    python3 -m venv env
+    source env/bin.activate | deactivate
+    pip install django | pipenv install django | pipenv shell
+    django-admin startproject littlelemon
+    django-admin startapp restaurant
+
+2. Add 'restaurant' to settings.
+3. After creating models, register with admin and migrate.
+4. Configure urls at app and project-levels.
+5. Create a superuser python manage.py createsuperuser.
+6. Login at 127.0.0.1:8000/admin with credentials.
+7. Add menu data.
+8. In views.py:
+    Create views fro home, about, menu, display_menu_item, books;
+    While home, about views render html files from templates, books, menu, display_menu_item use logic;
+9. Menu view logic:
+    Menu model data assigned to menu_data;
+    menu_data assigned as value to 'menu' key; this object assigned to main_data;
+    To retrieve this data, when rendering, assigne 'menu': main_data;
+10. Menu.html template:
+    Extend base.html {% extends 'base.html' %};
+    Load static files with {% load static %};
+    Override part of the base.html with {% block content %} to add <h1>Menu</h1> <div></div>;
+    Loop over menu.menu with i;
+    <a href="{% url 'menu_item' pk=i.pk %}">
+    Assignes name and price (from Menu model) to according i;
+    {{i.name}}
+    {{i.price}}
+10. Display_menu_item logic:
+    Has pk argument passed, initially assigned to None;
+    If pk presen, menu_item gets Menu model data, based on pk;
+    Otherwise, no data passed to menu_item;
+    When rendering, pass menu_item as value;
+11. Save and run server.
+12. We have a home page:  127.0.0.1:8000
+13. http://127.0.0.1:8000/about/
+14. http://127.0.0.1:8000/menu/
+15. http://127.0.0.1:8000/menu_item/1/ with Home/Menu/Bruschetta links
+16. http://127.0.0.1:8000/book/
