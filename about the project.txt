@@ -8,8 +8,8 @@ Designing and building a simple Django app.
 Objectives
 
 
-no - Using serializers in DRF to model data inside web applications.
-no - Using the GET and POST methods to update data entries in DRF.
+Using serializers in DRF to model data inside web applications.
+Using the GET and POST methods to update data entries in DRF.
 
 1. Install all dependencies.
     python3 -m venv env
@@ -41,8 +41,8 @@ no - Using the GET and POST methods to update data entries in DRF.
     {{i.name}}
     {{i.price}}
 10. Display_menu_item logic:
-    Has pk argument passed, initially assigned to None;
-    If pk presen, menu_item gets Menu model data, based on pk;
+    Have pk argument passed, initially assigned to None;
+    If pk present, menu_item gets Menu model data, based on pk;
     Otherwise, no data passed to menu_item;
     When rendering, pass menu_item as value;
 11. Save and run server.
